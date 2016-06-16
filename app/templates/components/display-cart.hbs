@@ -1,0 +1,22 @@
+
+
+<div class="row">
+  {{#each shoppingCart.items as |item|}}
+  <div class="col s4">
+    <div class="card large">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{item.artworkUrl100}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{item.artistName}}<i class="material-icons right">more_vert</i></span>
+        <p>{{item.trackName}}</p>
+        <audio controls>
+          <source src="{{item.previewUrl}}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+      </div>
+      </div>
+    </div>
+
+    {{/each}}
+  </div>

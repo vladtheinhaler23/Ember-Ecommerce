@@ -6,6 +6,16 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: 'AIzaSyAj6TLXnsRezMDbyUupVyX1rac25nTBgpA',
+      authDomain: 'ember-ecommerce-a3ede.firebaseapp.com',
+      databaseURL: 'https://ember-ecommerce-a3ede.firebaseio.com',
+      storageBucket: '',
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -40,7 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.locationType = 'hash';
   }
 
   return ENV;

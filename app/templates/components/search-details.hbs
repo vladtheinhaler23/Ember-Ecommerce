@@ -1,1 +1,22 @@
-{{yield}}
+<div class="row">
+  {{#each model as |result|}}
+  <div class="col s4">
+    <div class="card large">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{result.artworkUrl100}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{result.artistName}}<i class="material-icons right">more_vert</i></span>
+        <a {{action 'addToCart' result}} class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <p>{{result.trackName}} <br> Price: ${{result.trackPrice}}</p>
+        <audio controls>
+          <source src="{{result.previewUrl}}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+          </audio>
+
+        </div>
+      </div>
+    </div>
+
+    {{/each}}
+  </div>
